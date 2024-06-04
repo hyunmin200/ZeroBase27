@@ -1,16 +1,21 @@
-// 삼항 연산자(Ternary Operator)
-// 조건 ? (조건이 참일 때 실행) : (조건이 거짓일 때 실행)
+// 전개 연산자(Spread Operator)
 
-const f = ["사과", "바나나", "체리"];
+// 배열 데이터
+const numbers = [1, 2, 3];
+console.log(numbers); // [1, 2, 3]
+console.log(...numbers); // 1, 2, 3
 
-// IF 조건문
-if (f.length > 0) {
-	console.log("과일이 존재합니다.");
-} else {
-	console.log("과일이 존재하지 않습니다.");
-}
+const n1 = [1, 2, 3];
+const n2 = [2, 3, 4];
+const n3 = n1.concat(n2);
+const n4 = [...n1, ...n2];
+console.log(n3); // [1, 2, 3, 2, 3, 4]
+console.log(n4); // [1, 2, 3, 2, 3, 4]
 
-// 삼항 연산자
-const message =
-	f.length > 0 ? "과일이 존재합니다." : "과일이 존재하지 않습니다";
-console.log(message);
+// 객체 데이터
+const o1 = { a: 1, b: 2, c: 3 };
+const o2 = { b: 99, c: 100, d: 101 };
+const o3 = Object.assign({}, o1, o2);
+const o4 = { ...o1, ...o2 };
+console.log(o3); // { a: 1, b: 99, c: 100, d: 101}
+console.log(o4); // { a: 1, b: 99, c: 100, d: 101}
