@@ -1,14 +1,23 @@
-// const 키워드는 상수(Constant)를 의미하며, 한 번 선언하면 다른 값으로 변경 할 수 없다.
-const c = 12;
-console.log(c);
-console.log(c);
-// c = 34; // Error: Assignment to constant variable.
-// JS는 Error가 발생하면 아래 코드를 싹다 무시한다.
+const a = 1;
+const b = "1";
 
-// let 키워드는 선언한 값을 다른 값으로 바꿀 수 있다.
-let l = 12;
-console.log(l);
-console.log(l);
-l = 13;
-console.log(l);
-console.log(l);
+// == 동등 연산자
+console.log("동등", a == b); // true
+// === 일치 연산자
+console.log("일치", a === b); // false
+
+// 다음 코드는 모두 true를 출력합니다.
+console.log("=================");
+console.log(123 == "123");
+console.log(1 == true);
+console.log(0 == false);
+console.log(null == undefined);
+console.log("" == false);
+
+// 다음 코드는 모두 false 출력합니다.
+console.log("=================");
+console.log(123 === "123");
+console.log(1 === true);
+console.log(0 === false);
+console.log(null === undefined);
+console.log("" === false);
