@@ -1,49 +1,16 @@
-// 부정 연산자(Negation Operator)는 참과 거짓의 반대값을 불린 데이터로 반환한다.
+// 삼항 연산자(Ternary Operator)
+// 조건 ? (조건이 참일 때 실행) : (조건이 거짓일 때 실행)
 
-console.log(!true); // false
-console.log(!false); // true
+const f = ["사과", "바나나", "체리"];
 
-console.log("중첩 사용!!");
-console.log(!0); // true
-console.log(!!0); // false
-console.log(!!!0); // true
-console.log(!!!!0); // false
+// IF 조건문
+if (f.length > 0) {
+	console.log("과일이 존재합니다.");
+} else {
+	console.log("과일이 존재하지 않습니다.");
+}
 
-console.log("거짓(Falsy)!!");
-console.log(!null); // true
-console.log(!NaN); // true
-console.log(!undefined); // true
-console.log(!""); // true
-
-console.log("참(Truthy");
-console.log(!{}); // false
-console.log(![]); // false
-console.log(!"A"); // false
-
-// 비교 연산자(Comparison Operators)는 두 데이터를 비교할 때 사용한다.
-const a = 1;
-const b = 3;
-
-// 동등(형 변환!)
-console.log(a == b);
-
-// 부등(형 변환!)
-console.log(a != b);
-
-// 일치
-console.log(a === b);
-
-// 불일치
-console.log(a !== b);
-
-// 큼
-console.log(a > b);
-
-// 크거나 같음
-console.log(a >= b);
-
-// 작음
-console.log(a < b);
-
-// 작거나 같음
-console.log(a <= b);
+// 삼항 연산자
+const message =
+	f.length > 0 ? "과일이 존재합니다." : "과일이 존재하지 않습니다";
+console.log(message);
