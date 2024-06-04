@@ -1,23 +1,71 @@
-const a = 1;
-const b = "1";
+// '참'으로 평가되는 값 (Truthy)
+if (true) {
+	console.log("참!");
+}
+if ({}) {
+	console.log("참!");
+}
+if ([]) {
+	console.log("참!");
+}
+if (42) {
+	console.log("참!");
+}
+if ("0") {
+	console.log("참!");
+}
+if ("false") {
+	console.log("참!");
+}
+if (new Date()) {
+	console.log("참!");
+}
+if (-42) {
+	console.log("참!");
+}
+if (12n) {
+	console.log("참!");
+}
+if (3.14) {
+	console.log("참!");
+}
+if (-3.14) {
+	console.log("참!");
+}
+if (Infinity) {
+	console.log("참!");
+}
+if (-Infinity) {
+	console.log("참!");
+}
+// ...
 
-// == 동등 연산자
-console.log("동등", a == b); // true
-// === 일치 연산자
-console.log("일치", a === b); // false
-
-// 다음 코드는 모두 true를 출력합니다.
-console.log("=================");
-console.log(123 == "123");
-console.log(1 == true);
-console.log(0 == false);
-console.log(null == undefined);
-console.log("" == false);
-
-// 다음 코드는 모두 false 출력합니다.
-console.log("=================");
-console.log(123 === "123");
-console.log(1 === true);
-console.log(0 === false);
-console.log(null === undefined);
-console.log("" === false);
+// '거짓'으로 평가되는 값 (Falsy)
+if (false) {
+	console.log("거짓..");
+}
+if (null) {
+	console.log("거짓..");
+}
+if (undefined) {
+	console.log("거짓..");
+}
+if (42) {
+	console.log("거짓..");
+}
+if (0) {
+	console.log("거짓..");
+}
+if (-0) {
+	console.log("거짓..");
+}
+if (NaN) {
+	console.log("거짓..");
+}
+if (0n) {
+	console.log("거짓..");
+}
+if ("") {
+	console.log("거짓..");
+}
+// ...
