@@ -1,24 +1,17 @@
-const age = 20;
-if (age <= 20) {
-	console.log("성인");
-}
+// switch (조건) {
+//  case 값1:
+//    break;
+//  case 값2:
+//    break;
+//  case 값3:
+//    break;
+//  default:
+// }
 
-const num = 7;
-if (num % 2 === 0) {
-	console.log("짝수");
-} else {
-	console.log("홀수");
-}
-
-const score = 100;
-if (score >= 90) {
-	console.log("A");
-} else if (score >= 80) {
-	console.log("B");
-} else if (score >= 70) {
-	console.log("C");
-} else if (score >= 60) {
-	console.log("D");
-} else {
-	console.log("F");
+const prod = "스마트폰";
+switch (prod) {
+	case "노트북":
+		break;
+	case "스마트폰":
+		break;
 }
