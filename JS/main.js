@@ -1,13 +1,12 @@
-// for of 문
-// for (const 아이템변수 of 배열) {}
-const fs = ["사과", "바나나", "체리"];
-for (let i = 0; i < fs.length; i += 1) {
-	const f = fs[i];
-	console.log(f);
-}
-for (const f of fs) {
-	if (f === "체리") {
-		continue;
-	}
-	console.log(f);
+// for in 문
+// for (const 키변수 in 객체) {}
+const user = {
+	name: "이백원",
+	age: 85,
+	isValid: true,
+	email: "gyejeongjin@gmail.com",
+};
+for (const key in user) {
+	if (key === "age") continue;
+	console.log(key, user[key]);
 }
