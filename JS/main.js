@@ -1,22 +1,27 @@
-const fruits = ["Apple", "Banana", "Cherry"];
-// 유사배열
-const arrayLikeFruits = {
-	0: "Apple",
-	1: "Banana",
-	2: "Cherry",
-	length: 3,
+const target = { a: 1, b: 2 };
+const source1 = { b: 3, c: 4 };
+const source2 = { c: 5, d: 6 };
+// 원본 객체 변함
+// const result = Object.assign(target, source1, source2);
+// console.log(target);
+// console.log(result);
+
+// 원본 객체 변하지 않음
+const result = Object.assign({}, target, source1, source2);
+console.log(target);
+console.log(result);
+
+const userA = {
+	name: "200원",
+	age: 200,
 };
-console.log(fruits);
-console.log(arrayLikeFruits);
+const userB = {
+	age: 22,
+	email: "gyejeongjin@gmail.com",
+	isValid: true,
+};
+// const thw = Object.assign(userA, userB);
+const thw = Object.assign({}, userA, userB);
 
-console.log(fruits[1]);
-console.log(arrayLikeFruits[1]);
-
-console.log(fruits.length);
-console.log(arrayLikeFruits.length);
-
-console.log(Array.isArray(fruits));
-console.log(Array.isArray(arrayLikeFruits));
-
-console.log(fruits.map((fruit) => fruit.toUpperCase()));
-console.log(fruits.from(arrayLikeFruits).map((fruit) => fruit.toUpperCase()));
+console.log(thw);
+console.log(userA);
