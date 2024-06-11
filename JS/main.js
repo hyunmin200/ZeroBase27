@@ -1,17 +1,19 @@
-// 일반 함수
-function hello1() {
-	return "Hello~";
-}
-const add1 = function (a, b) {
-	return a + b;
+// 함수 정의(표현)
+const double = () => {
+	// ...
 };
-const log1 = function (c) {
-	console.log(c);
-};
+// 함수 실행(호출)
+double();
 
-// 화살표 함수
-const hello2 = () => "Hello~";
-const add2 = (a, b) => a + b;
-const log2 = (c) => {
-	console.log(c);
-};
+// 함수 정의 및 실행
+// 즉시실행함수(IIFE, Immediately Invoked Function Expression)
+(() => {
+	// ...
+})();
+
+// '즉시실행함수'의 다양한 사용법
+(() => {})();
+(function () {})();
+(function () {})()();
+!(function () {})();
++(function () {})();
