@@ -1,19 +1,25 @@
-// 함수 정의(표현)
-const double = () => {
-	// ...
+// 콜백
+
+const a = (callback) => {
+	console.log("A");
+	callback();
 };
-// 함수 실행(호출)
-double();
+const b = () => {
+	console.log("B");
+};
 
-// 함수 정의 및 실행
-// 즉시실행함수(IIFE, Immediately Invoked Function Expression)
-(() => {
-	// ...
-})();
+a(b);
+// "A"
+// "B"
 
-// '즉시실행함수'의 다양한 사용법
-(() => {})();
-(function () {})();
-(function () {})()();
-!(function () {})();
-+(function () {})();
+// ============================== //
+
+function add(a, b, cb) {
+	// 1초 뒤 실행
+	setTimeout(() => {
+		cb(a + b);
+	}, 1000);
+}
+add(3, 7, (result) => {
+	console.log(result);
+});
