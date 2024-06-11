@@ -1,23 +1,21 @@
-// 콜백을 호출하는 타이머 설정
-// const timeout = setTimeout(() => {
-// 	console.log("Hello~");
-// }, 5000);
+const msg1 = "Hello World!";
+const msg2 = "안녕하세요";
 
-// 타이머를 취소
-// const btnEl = document.querySelector("button");
-// btnEl.addEventListener("click", () => {
-// 	console.log("타이머 취소");
-// 	clearTimeout(timeout);
-// });
+console.log(msg1.length);
+console.log(msg2.length);
+console.log(msg1.includes("!"));
+console.log(msg2.includes("안녕"));
+console.log(msg1.replace("World", "월드"));
+console.log(msg2.replace("안녕하", "안녕히계"));
 
-// 콜백을 반복 호출하는 타이머 설정
-const timeout = setInterval(() => {
-	console.log("Hello~");
-}, 3000);
+const msg3 = "안 녕 하 세 요";
 
-// 타이머를 취소
-const btnEl = document.querySelector("button");
-btnEl.addEventListener("click", () => {
-	console.log("타이머 취소");
-	clearInterval(timeout);
-});
+console.log(msg1.replaceAll(" ", ""));
+
+console.log(msg1.slice(0, 5)); // "Hello"
+console.log(msg1.split(" ")); // ["Hello", "World!"]
+console.log(msg1.toLowerCase());
+console.log(msg1.toUpperCase());
+
+const msg4 = "   Hello!!!	   ";
+console.log(msg4.trim());
