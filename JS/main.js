@@ -1,17 +1,7 @@
-const numbers = ["12", "456", "132", "60", "1"];
-numbers.forEach((number) => {
-	console.log(number);
-});
+const f = ["사과", "바나나", "체리"];
+console.log(f.includes("사과"));
+console.log(f.includes("버나나")); // false
 
-let sum = 0;
-numbers.forEach((number) => {
-	sum += number;
-});
-console.log("합계: ", sum);
-
-for (const number of numbers) {
-	if (number > 100) {
-		break;
-	}
-	console.log(number);
-}
+const n = [10, 20, 30, 40];
+console.log(n.includes(10));
+console.log(n.includes(123123));
