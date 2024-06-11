@@ -1,4 +1,4 @@
-const num = 3.141592;
-
-console.log(num.toFixed(2)); // "3.14"
-console.log(Number(num.toFixed(2))); // 3.14
+console.log(Math.abs(7)); // 7
+console.log(Math.abs(-7)); // 7
+console.log(Math.abs(3.14)); // 3.14
+console.log(Math.abs(-3.14)); // 3.14
