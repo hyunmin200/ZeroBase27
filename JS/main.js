@@ -1,11 +1,17 @@
 const numbers = ["12", "456", "132", "60", "1"];
-const foundIndex = numbers.findIndex((number) => number < 30);
-console.log(foundIndex);
+numbers.forEach((number) => {
+	console.log(number);
+});
 
-const users = [
-	{ name: "현민", age: 18 },
-	{ name: "200원", age: 200, email: "200@gmail.com" },
-	{ name: "황현민", age: 19, email: "gyejeongjin@gmail.com" },
-];
-const foundUserIndex = users.findIndex((user) => !user.email);
-console.log(foundUserIndex);
+let sum = 0;
+numbers.forEach((number) => {
+	sum += number;
+});
+console.log("합계: ", sum);
+
+for (const number of numbers) {
+	if (number > 100) {
+		break;
+	}
+	console.log(number);
+}
