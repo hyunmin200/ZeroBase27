@@ -1,2 +1,2 @@
-console.log(Math.floor(3.14141411)); // 3
-console.log(Math.floor(3.14141441 * 100) / 100); // 3.14
+console.log(Math.round(3.1)); // 3
+console.log(Math.round(3.6)); // 4
