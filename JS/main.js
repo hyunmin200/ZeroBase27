@@ -1,8 +1,8 @@
-const fruits1 = ["APPLE", "BANANA", "CHERRY"];
-console.log(fruits1.reverse());
-console.log(fruits1);
+const numbers = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-// 원본이 변경 안되었으면 좋겠다?
-const fruits2 = ["APPLE", "BANANA", "CHERRY"];
-console.log([...fruits2].reverse());
-console.log(fruits2);
+console.log(numbers.slice(0, 3));
+console.log(numbers.slice(4, -1));
+console.log(numbers.slice(4));
+console.log(numbers.slice(-4));
+console.log(numbers.slice(-4, -1));
+console.log(numbers);
