@@ -1,29 +1,17 @@
-// 인수(Argument)와 매개변수(Parameter)
-
-// function add(a, b) {
-// 	return a + b;
-// }
-// console.log(add(2, 1));
-// console.log(add(7, 4));
-// console.log(add("A", "B"));
-
-// =================================== //
-
-// 매개변수의 기본값(Default Value)
-// function add(a, b = 1) {
-// 	return a + b;
-// }
-// console.log(add(2));
-// console.log(add(7, undefined)); // 위랑 같음
-// console.log(add());
-
-// =================================== //
-
-// 나머지 매개변수(Rest Parameter)
-
-function add(a, b, ...rest) {
-	console.log(a, b, rest);
-	return rest.reduce((acc, cur) => acc + cur, 0);
+// 일반 함수
+function hello1() {
+	return "Hello~";
 }
-const res = add(1, 2, 3, 4, 5, 6, 7, 8);
-console.log(res);
+const add1 = function (a, b) {
+	return a + b;
+};
+const log1 = function (c) {
+	console.log(c);
+};
+
+// 화살표 함수
+const hello2 = () => "Hello~";
+const add2 = (a, b) => a + b;
+const log2 = (c) => {
+	console.log(c);
+};
