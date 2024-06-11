@@ -1,25 +1,23 @@
-// 콜백
+// 콜백을 호출하는 타이머 설정
+// const timeout = setTimeout(() => {
+// 	console.log("Hello~");
+// }, 5000);
 
-const a = (callback) => {
-	console.log("A");
-	callback();
-};
-const b = () => {
-	console.log("B");
-};
+// 타이머를 취소
+// const btnEl = document.querySelector("button");
+// btnEl.addEventListener("click", () => {
+// 	console.log("타이머 취소");
+// 	clearTimeout(timeout);
+// });
 
-a(b);
-// "A"
-// "B"
+// 콜백을 반복 호출하는 타이머 설정
+const timeout = setInterval(() => {
+	console.log("Hello~");
+}, 3000);
 
-// ============================== //
-
-function add(a, b, cb) {
-	// 1초 뒤 실행
-	setTimeout(() => {
-		cb(a + b);
-	}, 1000);
-}
-add(3, 7, (result) => {
-	console.log(result);
+// 타이머를 취소
+const btnEl = document.querySelector("button");
+btnEl.addEventListener("click", () => {
+	console.log("타이머 취소");
+	clearInterval(timeout);
 });
