@@ -1,2 +1,1 @@
-console.log(Math.round(3.1)); // 3
-console.log(Math.round(3.6)); // 4
+console.log(Math.max(10, 128, 12, 49, 1));
