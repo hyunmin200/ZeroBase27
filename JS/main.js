@@ -1,15 +1,8 @@
-const el = document.querySelector("#apple");
-
-console.log(el.getAttribute("class"));
-console.log(el.getAttribute("title"));
-
-// 덮어쓰여진다.
-// el.setAttribute("class", "hello-world")
-el.setAttribute("title", "Hello-World");
-
-console.log(el.hasAttribute("class"));
-console.log(el.hasAttribute("title"));
-console.log(el.hasAttribute("value"));
-
-el.removeAttribute("class");
-el.removeAttribute("title");
+setTimeout(() => {
+	// window.scrollTo(0, 200);
+	window.scrollTo({
+		left: 100,
+		top: 200,
+		behavior: "smooth",
+	});
+}, 2000);
