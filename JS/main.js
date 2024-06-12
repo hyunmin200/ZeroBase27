@@ -1,7 +1,21 @@
-// GET
 const el = document.querySelector("#apple");
-console.log(el.innerHTML);
+const str = "Hello World";
+const num = 123;
+const obj = {
+	a: 1,
+	b: 2,
+};
 
-// SET
-el.innerHTML = `<div class="apple" style="font-size: 100px; color: red;">두리안</div>`;
-console.log(el.innerHTML);
+console.log(el.dataset);
+
+el.dataset.helloWorld = str;
+el.dataset.number = num;
+el.dataset.object = JSON.stringify(obj);
+
+console.log(el.dataset);
+
+console.log(el.dataset.helloWorld);
+console.log(el.dataset.number);
+console.log(JSON.parse(el.dataset.number));
+console.log(el.dataset.object);
+console.log(JSON.parse(el.dataset.object));
