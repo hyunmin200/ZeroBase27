@@ -1,9 +1,7 @@
-const parentEl = document.querySelector(".parent");
-const appleEl = document.querySelector("#apple");
+// GET
+const el = document.querySelector("#apple");
+console.log(el.textContent);
 
-console.log(parentEl.contains(appleEl));
-console.log(document.body.contains(parentEl));
-console.log(document.body.contains(appleEl));
-console.log(document.body.contains(document.body));
-console.log(parentEl.contains(document.body));
-console.log(appleEl.contains(document.body));
+// SET
+el.textContent = "오렌지";
+console.log(el.textContent);
