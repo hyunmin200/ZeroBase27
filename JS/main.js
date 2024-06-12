@@ -8,9 +8,13 @@ window.addEventListener("click", () => {
 document.documentElement.addEventListener("click", () => {
 	console.log("HTML");
 });
-document.body.addEventListener("click", () => {
-	console.log("body");
-});
+document.body.addEventListener(
+	"click",
+	() => {
+		console.log("body");
+	},
+	{ capture: true },
+);
 parentEl.addEventListener("click", (e) => {
 	console.log("parent");
 	// e.stopPropagation(); // 버블링 정지!
@@ -18,6 +22,7 @@ parentEl.addEventListener("click", (e) => {
 childEl.addEventListener("click", () => {
 	console.log("child");
 });
-anchorEl.addEventListener("click", () => {
+anchorEl.addEventListener("click", (e) => {
+	e.preventDefault();
 	console.log("a");
 });
