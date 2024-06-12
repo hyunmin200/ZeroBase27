@@ -1,11 +1,12 @@
 const parentEl = document.querySelector(".parent");
-const appleEl = document.querySelector(".apple");
+const childEl = document.querySelector(".child");
 
-console.log(parentEl.clientWidth, parentEl.clientHeight);
-console.log(appleEl.clientWidth, appleEl.clientHeight);
+parentEl.addEventListener("click", () => {
+	console.log("부모");
+});
 
-console.log(parentEl.offsetWidth, parentEl.offsetHeight);
-console.log(appleEl.offsetWidth, appleEl.offsetHeights);
+childeEl.addEventListener("click", () => {
+	console.log("자식");
+});
 
-console.log(parentEl.scrollWidth, parentEl.scrollHeight);
-console.log(appleEl.scrollWidth, appleEl.scrollHeight);
+// 이벤트 버블링 발생
