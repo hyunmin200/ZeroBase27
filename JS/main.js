@@ -1,7 +1,7 @@
 // GET
 const el = document.querySelector("#apple");
-console.log(el.textContent);
+console.log(el.innerHTML);
 
 // SET
-el.textContent = "오렌지";
-console.log(el.textContent);
+el.innerHTML = `<div class="apple" style="font-size: 100px; color: red;">두리안</div>`;
+console.log(el.innerHTML);
