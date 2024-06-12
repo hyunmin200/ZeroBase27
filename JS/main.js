@@ -1,11 +1,9 @@
-const user = {
-	name: "200원",
-	age: 200,
-	email: "200woni@naver.com",
-	isValid: true, // 후행 쉼표
-};
-console.log(JSON.stringify(user));
+const parentEl = document.querySelector(".parent");
 
-const json = JSON.stringify(user);
-console.log(json);
-console.log(JSON.parse(json));
+// 요소의 모든 자식 노드를 확인합니다.
+// 요소, 텍스트, 주석 전부 나옴
+console.log(parentEl.childNodes);
+
+// 요소의 모든 자식 요소를 확입합니다.
+// 자식 요소만 나옴
+console.log(parentEl.children);
