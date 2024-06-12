@@ -1,8 +1,11 @@
-setTimeout(() => {
-	// window.scrollTo(0, 200);
-	window.scrollTo({
-		left: 100,
-		top: 200,
-		behavior: "smooth",
-	});
-}, 2000);
+const parentEl = document.querySelector(".parent");
+const appleEl = document.querySelector(".apple");
+
+console.log(parentEl.clientWidth, parentEl.clientHeight);
+console.log(appleEl.clientWidth, appleEl.clientHeight);
+
+console.log(parentEl.offsetWidth, parentEl.offsetHeight);
+console.log(appleEl.offsetWidth, appleEl.offsetHeights);
+
+console.log(parentEl.scrollWidth, parentEl.scrollHeight);
+console.log(appleEl.scrollWidth, appleEl.scrollHeight);
