@@ -2,7 +2,10 @@ const user = {
 	name: "200원",
 	age: 200,
 	email: "200woni@naver.com",
-	isValid: true,
+	isValid: true, // 후행 쉼표
 };
-const values = Object.values(user);
-console.log(values);
+console.log(JSON.stringify(user));
+
+const json = JSON.stringify(user);
+console.log(json);
+console.log(JSON.parse(json));
