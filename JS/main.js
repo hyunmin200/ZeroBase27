@@ -1,9 +1,11 @@
-const parentEl = document.querySelector(".parent");
+const nodeList = document.querySelectorAll("div");
+console.log(nodeList);
 
-// 요소의 모든 자식 노드를 확인합니다.
-// 요소, 텍스트, 주석 전부 나옴
-console.log(parentEl.childNodes);
+// NodeList는 유사 배열이며, '.forEach()' 메소드는 내장되어 있지만,
+// 기타 배열 메소드는 사용할 수 없다.
+nodeList.forEach((e, i) => console.log(i + 1, e));
 
-// 요소의 모든 자식 요소를 확입합니다.
-// 자식 요소만 나옴
-console.log(parentEl.children);
+// NodeList 객체는 'Array.from()' 메소드를 통해서 배열로 변환할 수 있다.
+const nodes = Array.from(nodeList);
+const names = nodes.map((e) => e.textContent);
+console.log(names);
