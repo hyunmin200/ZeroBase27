@@ -10,6 +10,7 @@ console.log(el.dataset);
 
 el.dataset.helloWorld = str;
 el.dataset.number = num;
+// 객체 같은 경우는 JSON문자 형식으로 변환해야된다.
 el.dataset.object = JSON.stringify(obj);
 
 console.log(el.dataset);
