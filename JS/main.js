@@ -1,12 +1,11 @@
 const parentEl = document.querySelector(".parent");
 const childEl = document.querySelector(".child");
 
-parentEl.addEventListener("click", () => {
+const handler = () => {
 	console.log("부모");
-});
+};
 
-childeEl.addEventListener("click", () => {
-	console.log("자식");
+parentEl.addEventListener("click", handler);
+childEl.addEventListener("click", () => {
+	parentEl.removeEventListener("click", handler);
 });
-
-// 이벤트 버블링 발생
