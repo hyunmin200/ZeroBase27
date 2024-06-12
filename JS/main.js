@@ -1,15 +1,13 @@
+const parentEl = document.createElement(".parent");
+
 const divEl = document.createElement("div");
-divEl.textContent = "안녕하세요!";
-divEl.classList.add("hello");
-console.log(divEl);
+divEl.textContent = "새로운 요소!";
 
 const inputEl = document.createElement("input");
-inputEl.value = "입력하세요!";
-console.log(inputEl);
 
-const buttonEl = document.createElement("button");
-buttonEl.textContent = "버튼입니다!";
-console.log(buttonEl);
+const res1 = parentEl.prepend(new Comment(" 새로운 주석 "));
+const res2 = parentEl.append(divEl, "새로운 텍스트");
+const res3 = (parentEl.appendChild(inputEl).placeholder = "값을 입력하세요!");
 
-// HTML body에 추가하기
-document.body.append(divEl, inputEl, buttonEl);
+console.log(res1, res2);
+console.log(res3);
