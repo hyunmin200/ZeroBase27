@@ -1,34 +1,17 @@
-const formEl = document.querySelector("#login");
-const inputEls = document.querySelectorAll("input");
+console.log(null?.abc);
+console.log(undefined?.abc);
 
-inputEls.forEach((el) => {
-	// focus(focusin) - 요소가 포커스를 얻었을 때
-	el.addEventListener("focus", () => {
-		formEl.classList.add("active");
-	});
-	// blur(focusout) - 요소가 포커스를 잃었을 때
-	el.addEventListener("blur", () => {
-		formEl.classList.remove("active");
-	});
-	// input - 값이 변경되었을 때
-	// change - 상태가 변경되었을 때
-	el.addEventListener("input", (e) => {
-		console.log(e.target.value);
-	});
-});
+const el = document.querySelector("h1");
+console.log(el?.textContent);
 
-// submit - 제출 버튼을 선택했을 때
-formEl.addEventListener("submit", (e) => {
-	e.preventDefault();
-	const data = {
-		id: e.target[0].value,
-		pw: e.target[1].value,
-	};
-	// fetch(https://....)
-	console.log("서버로 제출했습니다.");
-});
+// const numbers = [1, 2, 3];
+const number = null;
+// 대괄호에서도 쓸 수 있다 ㄷㄷ
+console.log(numbers?.[0]);
 
-// reset - 리셋 버튼을 선택했을 때
-formEl.addEventListener("reset", () => {
-	console.log("모든 값이 초기화되었습니다.");
-});
+const user = {
+	name: "200원",
+	age: 22,
+};
+// const user = null;
+console.log(user?.name);
