@@ -1,20 +1,24 @@
-// 프로토타입
+// class
 class User {
-	constructor(name, age) {
-		this.name = name;
-		this.age = age;
+	constructor(first, last) {
+		this.first = first;
+		this.last = last;
 	}
-	getBirthYear() {
-		const year = new Date().getFullYear();
-		return year - this.age;
+	get fullName() {
+		return `${this.firstName} ${this.lastName}`;
+	}
+	set fullName(value) {
+		const names = value.split(" ");
+		this.first = names[0];
+		this.last = names[1];
 	}
 }
 
-const thw = new User("thw", 200);
-const hhm = new User("hhm", 19);
+const thw = new User("200", "원");
+
+// Get
+console.log(thw.fullName);
+//Set
+thw.fullName = "황 현민";
 
 console.log(thw);
-console.log(hhm);
-console.log(thw.getBirthYear());
-console.log(hhm.getBirthYear());
-console.log(thw.getBirthYear() === hhm.getBirthYear());
