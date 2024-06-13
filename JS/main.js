@@ -1,8 +1,20 @@
-console.log(1);
-console.log(2);
-alert("확인");
-console.log(3);
-console.time("Loop!");
-for (let i = 0; i < 10000000; i++) {}
-console.timeEnd("Loop!");
-console.log(4);
+function renderImage(callback) {
+	const imgEl = document.createElement("img");
+	imgEl.src = "https://picsum.photos/3000/2000";
+	imgEl.addEventListener("load", () => {
+		document.body.append(imgEl);
+		callback();
+	});
+}
+renderImage(() => {
+	console.log("Done 1");
+	renderImage(() => {
+		console.log("Done 2");
+		renderImage(() => {
+			console.log("Done 3");
+			renderImage(() => {
+				console.log("Done 4");
+			});
+		});
+	});
+});
