@@ -1,26 +1,23 @@
-function renderImage() {
-	return new Promise((resolve) => {
+const h1El = document.querySelector("h1");
+const ulEl = document.createElement("ul");
+document.body.append(ulEl);
+
+h1El.addEventListener("click", async () => {
+	ulEl.textContent = "Loading...";
+	// promise instance가 반환이 된다.
+	// await로 데이터를 가져오는 것을 기다림 (promise instance에만 사용가능)
+	const res = await fetch("https://api.heropy.dev/v0/users");
+	// 데이터 분석이 끝나는 것을 기다림
+	const data = await res.json(); // promise instance 반환함
+	const { users } = data;
+	const liEls = users.map((user) => {
+		const liEl = document.createElement("li");
+		liEl.textContent = user.name;
 		const imgEl = document.createElement("img");
-		imgEl.src = "https://picsum.photos/3000/2000";
-		imgEl.addEventListener("load", () => {
-			document.body.append(imgEl);
-			resolve();
-		});
+		imgEl.src = user.photo?.url || "https://heropy.dev/favicon.png";
+		liEl.prepend(imgEl);
+		return liEl;
 	});
-}
-renderImage()
-	.then(() => {
-		console.log("Done 1");
-		return renderImage();
-	})
-	.then(() => {
-		console.log("Done 2");
-		return renderImage();
-	})
-	.then(() => {
-		console.log("Done 3");
-		return renderImage();
-	})
-	.then(() => {
-		console.log("Done 4");
-	});
+	ulEl.textContent = "";
+	ulEl.append(...liEls);
+});
