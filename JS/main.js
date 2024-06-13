@@ -1,17 +1,21 @@
-console.log(null?.abc);
-console.log(undefined?.abc);
+import { add, sub } from "./core/calculator.js";
+import { getUserBirthYear } from "./core/user.js";
+import { fruits, addFruits } from "./core/fruits.js";
 
-const el = document.querySelector("h1");
-console.log(el?.textContent);
+console.log(add(2, 7));
+console.log(sub(2, 7));
 
-// const numbers = [1, 2, 3];
-const number = null;
-// 대괄호에서도 쓸 수 있다 ㄷㄷ
-console.log(numbers?.[0]);
-
-const user = {
+const thw = {
 	name: "200원",
-	age: 22,
+	age: 200,
 };
-// const user = null;
-console.log(user?.name);
+const hhm = {
+	name: "황현민",
+	age: 19,
+};
+console.log(getUserBirthYear(thw));
+console.log(getUserBirthYear(hhm));
+
+addFruits("오렌지");
+addFruits("망고");
+console.log(fruits);
