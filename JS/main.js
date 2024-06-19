@@ -1,16 +1,24 @@
-// fetch(url, options)
-// options.method: 요청 종류(GET, POST, PUT, DELETE 등)
-// options.headers: 요청 메타 정보
-// options.body: 요청 데이터
-fetch("https://api.heropy.dev/v0/users", {
-	method: "POST",
-	headers: {
-		"Context-Type": "application/json",
-	},
-	body: JSON.stringify({
-		name: "황현민",
-		age: 19,
-	}),
-})
-	.then((res) => res.json())
-	.then((data) => console.log(data));
+async function getMovies(movieName) {
+	const res = await fetch(
+		`https://omdbapi.com/?apikey=7035c60c&s=${movieName}`,
+	);
+	return await res.json();
+}
+
+const titles = ["frozen", "avengers", "avatar"];
+
+// 배열 메소드 반복
+// titles.forEach(async (title, index) => {
+// 	const movies = await getMovies(title);
+// 	console.log(`${index + 1} ${title}`, movies);
+// });
+
+// for 반복문
+(async () => {
+	let index = 1;
+	for (const title of titles) {
+		const movies = await getMovies(title);
+		console.log(`${index + 1} ${title}`, movies);
+		index += 1;
+	}
+})();
