@@ -1,25 +1,24 @@
-const neo = {
-	name: "Neo",
-};
-const amy = {
-	name: "Amy",
-	getInfo(age, city) {
-		return `${this.name}는 ${age}세이고, ${city}에 삽니다.`;
-	},
-};
-console.log(amy.getInfo(22, "서울"));
+// Throttle
+// - 정해진 시간 간격으로 함수를 실행하도록 제한합니다.
+window.addEventListener(
+	"scroll",
+	_.throttle(function () {
+		console.log("Scroll!");
+	}, 400),
+);
 
-// .call(this, 인수1, 인수2, ...)
-// 대상 함수를 주어진 객체(this)의 메소드로 실행합니다.
-console.log(amy.getInfo.call(neo, 1, "부산"));
-
-// .apply(this, [인수1, 인수2, ...])
-// 대상 함수를 주어진 객체(this)의 메소드로 실행합니다.
-console.log(amy.getInfo.apply(neo, [85, "서울"]));
-
-// .bind(this)
-// 대상 함수를 주어진 객체(this)의 메소드로 실행할 수 있는 새로운 함수를 반환합니다.
-const neoGetInfo = amy.getInfo.bind(neo);
-setTimeout(() => {
-	console.log(neoGetInfo(85, "서울"));
-}, 1000);
+// Debounce
+// - 정해진 시간 동안 함수가 실행되지 않으면, 함수를 실행합니다.(마지막에 한 번만 실행)
+async function getMovies(movieName) {
+	const res = await fetch(
+		`https://omdbapi.com/?apikey=7035c60c&s=${movieName}`,
+	);
+	return await res.json;
+}
+const inputEl = document.querySelector("input");
+inputEl.addEventListener(
+	"input",
+	_.debounce(function () {
+		console.log(getMovies(inputEl.value));
+	}, 400),
+);
