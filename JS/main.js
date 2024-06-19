@@ -1,13 +1,24 @@
-const neo = { name: "Neo" };
-const evan = { name: "Evan", parent: neo };
-const lewis = { name: "Lewis", parent: evan };
-const amy = { name: "Amy", parent: lewis };
+function User() {
+	this.name = "User";
+	return {
+		name: "Neo",
+		age: 80,
+		// getInfo() {
+		// 	return `${this.name}는 ${this.age}입니다.`;
+		// },
+		getInfo: () => {
+			return `${this.name}는 ${this.age}입니다.`;
+		},
+	};
+}
 
-const getRootUser = (user) => {
-	if (user.parent) {
-		return getRootUser(user.parent);
-	}
-	return user;
+const u = new User();
+console.log(u.name);
+console.log(u.age);
+console.log(u.getInfo());
+
+const evan = {
+	name: "Evan",
+	age: 25,
 };
-
-console.log(getRootUser(amy));
+console.log(u.getInfo.call(evan));
